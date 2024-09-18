@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration Form</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="main">
+        <h1 id="heading"><u>STUDENT REGISTRATION FORM</u></h1>
+        <div class="field">
+            <label for="name">NAME:</label>
+            <input type="text" id="name" placeholder="Enter Your Name" required>
+        </div><br>
+        <div class="field">
+            <label for="father-name">FATHER'S NAME:</label>
+            <input type="text" id="father-name" placeholder="Enter Your Father's Name" required>
+        </div><br>
+        <div class="field">
+            <label for="mother-name">MOTHER'S NAME:</label>
+            <input type="text" id="mother-name" placeholder="Enter Your Mother's Name" required>
+        </div><br>
+        <div class="field">
+            <label for="phone-number">PHONE NUMBER:</label>
+            <input type="number" id="phone-number" placeholder="Enter Your Phone Name" required>
+        </div><br>
+        <div class="field">
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="abc@gmail.com" required>
+        </div><br>
+        <div class="field">
+            <label for="gender">SELECT GENDER:</label><br>
+            <input type="radio" id="male" name="gender" required>
+            <label for="male">Male</label><br>
+            
+            <input type="radio" id="female" name="gender" checked>
+            <label for="female">Female</label><br>
+            
+            <input type="radio" id="other" name="gender">
+            <label for="other">Others</label><br>
+        </div><br>
+        <div class="field"> 
+            <label for="date-of-birth">DATE OF BIRTH:</label>
+            <input type="date" id="date-of-birth" required>
+        </div><br>
+        <div class="field">
+            <label for="address">ADDRESS:</label>
+            <input type="text" id="address" placeholder="Enter Your Address" required>
+        </div><br>
+        <div class="field">
+            <label for="blood-group">SELECT BLOOD GROUP:</label>
+            <select id="blood-group" name="blood-group">
+                <option value="A+" selected>A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+            </select>
+        </div><br>  
+        <div class="field">
+            <label for="department">DEPARTMENT:</label><br>
+        
+            <input type="radio" id="CSE" name="department" value="CSE" required>
+            <label for="CSE">CSE</label><br>
+        
+            <input type="radio" id="EEA" name="department" value="EEA">
+            <label for="EEA">EEA</label><br>
+        
+            <input type="radio" id="BBA" name="department" value="BBA" checked>
+            <label for="BBA">BBA</label><br>
+        </div><br>      
+        <div class="field">
+            <label for="courses">COURSES:</label><br>
+            
+            <label for="html">HTML</label>
+            <input type="checkbox" id="html" required><br>
+            
+            <label for="css">CSS</label>
+            <input type="checkbox" id="css"><br>
+
+            
+            <label for="typescript">TYPESCRIPT</label>
+            <input type="checkbox" id="typescript"><br>
+
+            <label for="next.js">NEXT.JS</label>
+            <input type="checkbox" id="next.js" checked><br>
+        </div><br>      
+         <div class="field">
+            <label for="pic">PHOTO:</label>
+            <input type="file" id="pic" name="pic" accept="image/*" required>
+         </div><br>
+          <button>SUBMIT</button><br>
+          <button>RESET</button>
+</div>
+
+
+<script>
+    const fields = document.querySelectorAll('.field input, .field select');
+
+    fields.forEach(field => {
+        field.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter') {
+                event.preventDefault();
+                focusNextField(field);
+            }
+            if (event.key === 'ArrowDown') {
+                event.preventDefault();
+                focusNextField(field);
+            }
+            if (event.key === 'ArrowUp') {
+                event.preventDefault();
+                focusPreviousField(field);
+            }
+        });
+    });
+
+    function focusNextField(currentField) {
+        const nextField = getNextField(currentField);
+        if (nextField) {
+            nextField.focus();
+        }
+    }
+
+    function focusPreviousField(currentField) {
+        const previousField = getPreviousField(currentField);
+        if (previousField) {
+            previousField.focus();
+        }
+    }
+
+    function getNextField(currentField) {
+        let nextField = null;
+        fields.forEach((field, index) => {
+            if (field === currentField && index < fields.length - 1) {
+                nextField = fields[index + 1];
+            }
+        });
+        return nextField;
+    }
+
+    function getPreviousField(currentField) {
+        let previousField = null;
+        fields.forEach((field, index) => {
+            if (field === currentField && index > 0) {
+                previousField = fields[index - 1];
+            }
+        });
+        return previousField;
+    }
+</script>
+</body>
+</html>
+
+
+

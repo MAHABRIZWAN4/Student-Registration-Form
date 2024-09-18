@@ -1,0 +1,111 @@
+html {
+    font-size: 62.5%; /* 1rem = 10px */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('forest.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    font-size: 1.5rem;
+    color: brown;
+    font-weight: bold;
+    font-family: 'Baloo', cursive;
+}
+
+#main {
+    margin: 5rem 30rem;
+    border: .2rem solid none;
+    background: linear-gradient(145deg, rgb(245, 160, 2), rgb(237, 210, 161), rgb(233, 248, 20));
+    border-radius: 1.7rem;
+}
+
+h1 {
+    text-align: center;
+    color: brown;
+    font-size: 3.5rem;
+    padding: 1.7rem 1.2rem;
+}
+
+.field {
+    margin: 0rem 6rem;
+    border: .2rem solid brown;
+    padding: 1.2rem;
+    border-radius: 1.7rem;
+    font-size: 1.6rem;
+    box-shadow: 0 .4rem 1.2rem rgba(25, 255, 4, 0.877);
+}
+
+button {
+    margin: .4rem 28rem;
+    border: .2rem solid yellow;
+    font-family: 'Baloo', cursive;
+    box-sizing: border-box;
+    color: yellow;
+    background: brown;
+    padding: 1.5rem 4.2rem;
+    border-radius: 1.7rem;
+    font-size: 1.5rem;
+}
+
+button:hover {
+    border-radius: 1.9rem;
+    color: rgb(235, 12, 12);
+    background: rgb(168, 168, 16);
+    border: .3rem solid green;
+    font-size: 1.8rem;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+    #main {
+        margin: 5rem 10rem; /* Adjust margins for medium screens */
+    }
+
+    .field {
+        margin: 0rem 4rem; /* Adjust margin for fields */
+    }
+
+    button {
+        margin: .4rem auto; /* Center button */
+        display: block; /* Make button block for better centering */
+    }
+}
+
+@media (max-width: 800px) {
+    #main {
+        margin: 3rem 5%; /* Further adjust for smaller screens */
+    }
+
+    h1 {
+        font-size: 3rem; /* Adjust heading size */
+    }
+
+    .field {
+        margin: 0rem 2%; /* Adjust margin for fields */
+    }
+
+    button {
+        padding: 1rem 3rem; /* Adjust button padding */
+    }
+}
+
+@media (max-width: 500px) {
+    body {
+        font-size: 1.2rem; /* Reduce body font size for small screens */
+    }
+
+    h1 {
+        font-size: 2.5rem; /* Adjust heading size */
+    }
+
+    .field {
+        font-size: 1.4rem; /* Adjust field font size */
+    }
+
+    button {
+        padding: 0.8rem 2rem; /* Further adjust button padding */
+    }
+}
